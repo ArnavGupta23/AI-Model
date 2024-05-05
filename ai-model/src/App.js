@@ -7,10 +7,7 @@ function App() {
   const [response, setResponse] = useState('');
 
   // Create a Gemini API instance
-  // const genAI = new GoogleGenerativeAI(process.env.REACT_APP_API_KEY);
-
-  const genAI = new GoogleGenerativeAI("AIzaSyD1x0nHFxmJa_to18lqnwPJADy6FoN99yg");
-
+  const genAI = new GoogleGenerativeAI(process.env.REACT_APP_API_KEY);
 
   // Function to handle changes in the input field
   const handleInputChange = (event) => {
@@ -67,9 +64,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-//_____________-
-
