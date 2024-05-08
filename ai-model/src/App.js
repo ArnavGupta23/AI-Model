@@ -5,6 +5,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 function App() {
   const [question, setQuestion] = useState('');
   const [response, setResponse] = useState('');
+  const [isLoading, setIsLoading] = useState("");
 
   // Create a Gemini API instance
   const genAI = new GoogleGenerativeAI(process.env.REACT_APP_API_KEY);
@@ -16,6 +17,8 @@ function App() {
 
   // Function to handle form submission
   const handleSubmit = async (event) => {
+
+    setIsLoading("loading ...");
     event.preventDefault();
     if (!question) return;
     
@@ -41,11 +44,13 @@ function App() {
     const result = await chat.sendMessage(question);
     const apiResponse = await result.response;
     setResponse(apiResponse.text());
+
+    setIsLoading("Done!");
   };
 
   return (
     <div className="App">
-      <h1>Ask Me Anything!</h1>
+      <h1>AI model test</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -59,6 +64,8 @@ function App() {
         <p>Response:</p>
         <p>{response}</p>
       </div>
+
+    <span>console: {isLoading}</span>
     </div>
   );
 }
