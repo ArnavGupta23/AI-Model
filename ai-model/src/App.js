@@ -1,4 +1,4 @@
-
+import modelText from './modelText'; 
 import React, { useState } from 'react';
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
@@ -6,6 +6,8 @@ function App() {
   const [question, setQuestion] = useState('');
   const [response, setResponse] = useState('');
   const [isLoading, setIsLoading] = useState("");
+  // const [istesting, setIstest] = useState("");
+
 
   // Create a Gemini API instance
   const genAI = new GoogleGenerativeAI(process.env.REACT_APP_API_KEY);
@@ -14,6 +16,10 @@ function App() {
   const handleInputChange = (event) => {
     setQuestion(event.target.value);
   };
+
+// const test = async (event) => {
+//   setIstest(modelText);
+// };
 
   // Function to handle form submission
   const handleSubmit = async (event) => {
@@ -32,7 +38,7 @@ function App() {
         },
         {
           role: "model",
-          parts: [{ text: "I'm here to help. What would you like to know?" }],
+          parts: [{ text: modelText }],  // Corrected usage here
         },
       ],
       generationConfig: {
@@ -64,8 +70,11 @@ function App() {
         <p>Response:</p>
         <p>{response}</p>
       </div>
-
     <span>console: {isLoading}</span>
+{/* 
+    <button onClick={test}>test</button>
+    <span>test: {istesting}</span>
+     */}
     </div>
   );
 }
