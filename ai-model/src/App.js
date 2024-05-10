@@ -4,7 +4,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 function App() {
   const [question, setQuestion] = useState('');
-  const [response, setResponse] = useState('');
+  const [response, setResponse] = useState("Hey there! My name is Arnav Gupta. I'm 17 years old and I'm from Flemington, New Jersey. I'm a high school junior at Hunterdon Central Regional High School. I'm passionate about technology, programming, and leadership. I'm also interested in basketball, golf, skateboarding, saxophone, and weightlifting. I'm excited to connect with you and learn more about your interests as well!");
   const [isLoading, setIsLoading] = useState("");
   // const [istesting, setIstest] = useState("");
 
@@ -13,7 +13,7 @@ function App() {
   const genAI = new GoogleGenerativeAI(process.env.REACT_APP_API_KEY);
 
   // Function to handle changes in the input field
-  const handleInputChange = (event) => {
+  const handleQuestionChange = (event) => {
     setQuestion(event.target.value);
   };
 
@@ -27,7 +27,7 @@ function App() {
     setIsLoading("loading ...");
     event.preventDefault();
     if (!question) return;
-    
+
     // Start the chat session with the model
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     const chat = model.startChat({
@@ -38,7 +38,7 @@ function App() {
         },
         {
           role: "model",
-          parts: [{ text: modelText }],  // Corrected usage here
+          parts: [{ text: modelText }], 
         },
       ],
       generationConfig: {
@@ -56,12 +56,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>AI model test</h1>
+      <h1>Talk to Arnav Gupta</h1>
+      <h4>Test AI model</h4>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={question}
-          onChange={handleInputChange}
+          onChange={handleQuestionChange}
           placeholder="Type your question here"
         />
         <button type="submit">Submit</button>
