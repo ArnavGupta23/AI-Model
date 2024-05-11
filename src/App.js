@@ -10,7 +10,7 @@ function App() {
 
 
   // Create a Gemini API instance
-  const genAI = new GoogleGenerativeAI(process.env.REACT_GEMINI_API_KEY);
+  const genAI = new GoogleGenerativeAI(process.env.REACT_APP_API_KEY);
 
   // Function to handle changes in the input field
   const handleQuestionChange = (event) => {
