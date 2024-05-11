@@ -5,8 +5,10 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 function App() {
   const [question, setQuestion] = useState('');
-  const [response, setResponse] = useState("Hey there! My name is Arnav Gupta. I'm 17 years old and I'm from Flemington, New Jersey. I'm a high school junior at Hunterdon Central Regional High School. I'm passionate about technology, programming, and leadership. I'm also interested in basketball, golf, skateboarding, saxophone, and weightlifting. I'm excited to connect with you and learn more about your interests as well!");
+  const [response, setResponse] = useState("Hey there! My name is Arnav Gupta. I'm 17 years old and I'm from Flemington, New Jersey. I'm a high school junior at Hunterdon Central Regional High School. I'm passionate about technology, programming, and leadership. I'm also interested in basketball, golf, skateboarding, saxophone, and weightlifting. I'm excited to connect with you and please ask me questions!");
   const [isLoading, setIsLoading] = useState("");
+  const [isSpinning, setIsSpinning] = useState(false);
+
   // const [istesting, setIstest] = useState("");
 
 
@@ -26,6 +28,7 @@ function App() {
   const handleSubmit = async (event) => {
 
     setIsLoading("loading ...");
+    setIsSpinning(true);
     event.preventDefault();
     if (!question) return;
 
@@ -46,13 +49,21 @@ function App() {
         maxOutputTokens: 1000,
       },
     });
-
+//use when trying to implement multi chat
     // Send the question to the model and handle the response
+    // const result = await chat.sendMessage(question);
+    // const apiResponse = await result.response;
+    // setResponse(prev => prev + "\n" + apiResponse.text());
+    // setQuestion(""); 
+
     const result = await chat.sendMessage(question);
     const apiResponse = await result.response;
     setResponse(apiResponse.text());
     setIsLoading("Done!");
+    setIsSpinning(false);
   };
+
+  
 
   return (
     <div className="container my-5">
@@ -69,8 +80,16 @@ function App() {
                   onChange={handleQuestionChange}
                   placeholder="Type your question here"
                 />
-                <button type="submit" className="btn btn-primary">Ask</button>
+                <button type="submit" className="btn btn-primary">Ask a Question</button>
               </form>
+              {isSpinning ? (
+                <div className=" ">
+                  <div className="spinner-border text-success" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+               ) : null}
+              
               <div className="chat-responses p-3" style={{ height: "300px", overflowY: "auto", background: "#f8f9fa" }}>
                 <p>{response}</p>
               </div>
@@ -82,6 +101,8 @@ function App() {
     </div>
   );
 }
+
+
 
 
 export default App;
