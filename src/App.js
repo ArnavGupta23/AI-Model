@@ -2,6 +2,7 @@ import modelText from './modelText';
 import React, { useState } from 'react';
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
+
 function App() {
   const [question, setQuestion] = useState('');
   const [response, setResponse] = useState("Hey there! My name is Arnav Gupta. I'm 17 years old and I'm from Flemington, New Jersey. I'm a high school junior at Hunterdon Central Regional High School. I'm passionate about technology, programming, and leadership. I'm also interested in basketball, golf, skateboarding, saxophone, and weightlifting. I'm excited to connect with you and learn more about your interests as well!");
@@ -50,34 +51,37 @@ function App() {
     const result = await chat.sendMessage(question);
     const apiResponse = await result.response;
     setResponse(apiResponse.text());
-
     setIsLoading("Done!");
   };
 
   return (
-    <div className="App">
-      <h1>Talk to Arnav Gupta</h1>
-      <h4>Test AI model</h4>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={question}
-          onChange={handleQuestionChange}
-          placeholder="Type your question here"
-        />
-        <button type="submit">Submit</button>
-      </form>
-      <div>
-        <p>Response:</p>
-        <p>{response}</p>
+    <div className="container my-5">
+      <div className="row">
+        <div className="col-md-6 offset-md-3">
+          <h1 className="text-center mb-4">Talk to Arnav Gupta</h1>
+          <div className="card">
+            <div className="card-body">
+              <form onSubmit={handleSubmit} className="mb-3">
+                <input
+                  type="text"
+                  className="form-control mb-2"
+                  value={question}
+                  onChange={handleQuestionChange}
+                  placeholder="Type your question here"
+                />
+                <button type="submit" className="btn btn-primary">Ask</button>
+              </form>
+              <div className="chat-responses p-3" style={{ height: "300px", overflowY: "auto", background: "#f8f9fa" }}>
+                <p>{response}</p>
+              </div>
+              <small className="text-muted">{isLoading}</small>
+            </div>
+          </div>
+        </div>
       </div>
-    <span>console: {isLoading}</span>
-{/* 
-    <button onClick={test}>test</button>
-    <span>test: {istesting}</span>
-     */}
     </div>
   );
 }
+
 
 export default App;
