@@ -27,7 +27,7 @@ function App() {
   // Function to handle form submission
   const handleSubmit = async (event) => {
 
-    setIsLoading("loading ...");
+    setIsLoading("Console: Loading ...");
     setIsSpinning(true);
     event.preventDefault();
     if (!question) return;
@@ -59,7 +59,7 @@ function App() {
     const result = await chat.sendMessage(question);
     const apiResponse = await result.response;
     setResponse(apiResponse.text());
-    setIsLoading("Done!");
+    setIsLoading("Console: Done!");
     setIsSpinning(false);
   };
 
