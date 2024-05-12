@@ -1,5 +1,6 @@
 import modelText from './modelText'; 
 import React, { useState } from 'react';
+import './App.css';
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 
@@ -9,20 +10,12 @@ function App() {
   const [isLoading, setIsLoading] = useState("");
   const [isSpinning, setIsSpinning] = useState(false);
 
-  // const [istesting, setIstest] = useState("");
-
-
-  // Create a Gemini API instance
   const genAI = new GoogleGenerativeAI(process.env.REACT_APP_API_KEY);
 
-  // Function to handle changes in the input field
   const handleQuestionChange = (event) => {
     setQuestion(event.target.value);
   };
 
-// const test = async (event) => {
-//   setIstest(modelText);
-// };
 
   // Function to handle form submission
   const handleSubmit = async (event) => {
@@ -89,15 +82,15 @@ function App() {
                   </div>
                 </div>
                ) : null}
-              
-              <div className="chat-responses p-3" style={{ height: "300px", overflowY: "auto", background: "#f8f9fa" }}>
-                <p>{response}</p>
+              <div className="chat-responses p-3 rounded" style={{ height: "300px", overflowY: "auto", background: "#f8f9fa" }}>
+                <p className='text-center'>{response}</p>
               </div>
               <small className="text-muted">{isLoading}</small>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   );
 }
