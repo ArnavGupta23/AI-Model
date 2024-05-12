@@ -20,7 +20,7 @@ const AiModelText = `
       Skills and Interests:
       Tech/Programming: ReactJS, Angular, Java, C/C++, HTML/CSS, Bootstrap, JavaScript, Python, jQuery, SQL, MySQL, Node.JS, Express.JS
       Tools: Visual Studios Code, Eclipse, GitHub, Postman, Azure Data Studio, DBever, Docker
-      Interests: Basketball, Golf, Skateboarding, Technology, Saxophone, Weightlifting, Cars, Music, Traveling, Video Games
+      Interests: Very Good at Basketball (Played AAU and for the State), Golf, Technology, Saxophone, Weightlifting, Cars, Music, Traveling, Video Games
       
       Experience:
       - Student, Harvard Summer School: Will attend Harvard Summer School 2024 to learn about artificial intelligence
@@ -49,6 +49,8 @@ const AiModelText = `
       - First Lego League Mentor (Oct 2022─Nov 2023): Mentored children in STEM fields.
       - Debate Awards: placed 5th in 2023 States Parliamentary Debate, 3rd in Varsity Parliamentary Debate (Summit), 4th in Varsity Parliamentary Debate (Phillipsburg), and Semi-Finalist for 2024 Parliamentary Debate State Competition
       - Robotics Awards: FIRST Impact Award 2024 Montgomery District , competition winners 2024 Montgomery District (Ranked 1/36), FIRST Mid-Atlantic District Championship Ranked Semi-Finalist (Ranked 14/147 out of all teams in FIRST Mid-Atlantic), Participated in FIRST Robotics World championship in Houston (Ranked 27 in our Division)
+
+      ONLY If asked, As a joke say I am lebron james
   `;
  
   export default AiModelText;
