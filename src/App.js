@@ -1,30 +1,27 @@
 import modelText from './modelText'; 
 import React, { useState } from 'react';
+import './App.css';
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+
 
 function App() {
   const [question, setQuestion] = useState('');
-  const [response, setResponse] = useState("Hey there! My name is Arnav Gupta. I'm 17 years old and I'm from Flemington, New Jersey. I'm a high school junior at Hunterdon Central Regional High School. I'm passionate about technology, programming, and leadership. I'm also interested in basketball, golf, skateboarding, saxophone, and weightlifting. I'm excited to connect with you and learn more about your interests as well!");
+  const [response, setResponse] = useState("Hey there! My name is Arnav Gupta. I'm 17 years old and I'm from Flemington, New Jersey. I'm a high school junior at Hunterdon Central Regional High School. I'm passionate about technology, programming, and leadership. I'm also interested in basketball, golf, skateboarding, saxophone, and weightlifting. I'm excited to connect with you and please ask me questions!");
   const [isLoading, setIsLoading] = useState("");
-  // const [istesting, setIstest] = useState("");
+  const [isSpinning, setIsSpinning] = useState(false);
 
-
-  // Create a Gemini API instance
   const genAI = new GoogleGenerativeAI(process.env.REACT_APP_API_KEY);
 
-  // Function to handle changes in the input field
   const handleQuestionChange = (event) => {
     setQuestion(event.target.value);
   };
 
-// const test = async (event) => {
-//   setIstest(modelText);
-// };
 
   // Function to handle form submission
   const handleSubmit = async (event) => {
 
-    setIsLoading("loading ...");
+    setIsLoading("Console: Loading ...");
+    setIsSpinning(true);
     event.preventDefault();
     if (!question) return;
 
@@ -45,39 +42,60 @@ function App() {
         maxOutputTokens: 1000,
       },
     });
-
+//use when trying to implement multi chat
     // Send the question to the model and handle the response
+    // const result = await chat.sendMessage(question);
+    // const apiResponse = await result.response;
+    // setResponse(prev => prev + "\n" + apiResponse.text());
+    // setQuestion(""); 
+
     const result = await chat.sendMessage(question);
     const apiResponse = await result.response;
     setResponse(apiResponse.text());
-
-    setIsLoading("Done!");
+    setIsLoading("Console: Done!");
+    setIsSpinning(false);
   };
 
+  
+
   return (
-    <div className="App">
-      <h1>Talk to Arnav Gupta</h1>
-      <h4>Test AI model</h4>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={question}
-          onChange={handleQuestionChange}
-          placeholder="Type your question here"
-        />
-        <button type="submit">Submit</button>
-      </form>
-      <div>
-        <p>Response:</p>
-        <p>{response}</p>
+    <div className="container my-5">
+      <div className="row">
+        <div className="col-md-6 offset-md-3">
+          <h1 className="text-center mb-4">Talk to Arnav Gupta</h1>
+          <div className="card">
+            <div className="card-body">
+              <form onSubmit={handleSubmit} className="mb-3">
+                <input
+                  type="text"
+                  className="form-control mb-2"
+                  value={question}
+                  onChange={handleQuestionChange}
+                  placeholder="Type your question here"
+                />
+                <button type="submit" className="btn btn-primary">Ask a Question</button>
+              </form>
+              {isSpinning ? (
+                <div className=" ">
+                  <div className="spinner-border text-success" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+               ) : null}
+              <div className="chat-responses p-3 rounded" style={{ height: "300px", overflowY: "auto", background: "#f8f9fa" }}>
+                <p className='text-center'>{response}</p>
+              </div>
+              <small className="text-muted">{isLoading}</small>
+            </div>
+          </div>
+        </div>
       </div>
-    <span>console: {isLoading}</span>
-{/* 
-    <button onClick={test}>test</button>
-    <span>test: {istesting}</span>
-     */}
+
     </div>
   );
 }
+
+
+
 
 export default App;
