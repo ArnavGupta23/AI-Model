@@ -9,11 +9,16 @@ function App() {
   const [response, setResponse] = useState("Hey there! My name is Arnav Gupta. I'm 17 years old and I'm from Flemington, New Jersey. I'm a high school junior at Hunterdon Central Regional High School. I'm passionate about technology, programming, and leadership. I'm also interested in basketball, golf, skateboarding, saxophone, and weightlifting. I'm excited to connect with you and please ask me questions!");
   const [isLoading, setIsLoading] = useState("");
   const [isSpinning, setIsSpinning] = useState(false);
+  const [btnDisabled, setBtnDisabled] = useState(true);
 
   const genAI = new GoogleGenerativeAI(process.env.REACT_APP_API_KEY);
 
   const handleQuestionChange = (event) => {
     setQuestion(event.target.value);
+    // console.log("Event: "+event.target.value);
+    // console.log("question: "+question);
+    
+    (!event.target.value.trim()) ? setBtnDisabled(true) : setBtnDisabled(false);
   };
 
 
@@ -23,7 +28,6 @@ function App() {
     setIsLoading("Console: Loading ...");
     setIsSpinning(true);
     event.preventDefault();
-    if (!question) return;
 
     // Start the chat session with the model
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
@@ -73,7 +77,7 @@ function App() {
                   onChange={handleQuestionChange}
                   placeholder="Type your question here"
                 />
-                <button type="submit" className="btn btn-primary">Ask a Question</button>
+                <button id='submitBtn' type="submit" className="btn btn-primary" disabled ={btnDisabled}> Ask a Question </button>
               </form>
               {isSpinning ? (
                 <div className=" ">
