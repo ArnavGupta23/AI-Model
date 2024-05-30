@@ -77,8 +77,7 @@ function App() {
                   onChange={handleQuestionChange}
                   placeholder="Type your question here"
                 />
-                {/* <button id='submitBtn' type="submit" className="btn btn-primary" disabled ={btnDisabled}> Ask a Question </button> */}
-                <button id='submitBtn' type="submit" className="btn btn-primary" disabled ={true}> Ask a Question </button>
+                <button id='submitBtn' type="submit" className="btn btn-primary" disabled ={true||btnDisabled}> Ask a Question </button> 
               </form>
               {isSpinning ? (
                 <div className=" ">
