@@ -7,7 +7,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 function App() {
   const [question, setQuestion] = useState('');
   const [response, setResponse] = useState("Hey there! My name is Arnav Gupta. I'm 17 years old and I'm from Flemington, New Jersey. I'm a high school junior at Hunterdon Central Regional High School. I'm passionate about technology, programming, and leadership. I'm also interested in basketball, golf, skateboarding, saxophone, and weightlifting. I'm excited to connect with you and please ask me questions!");
-  const [isLoading, setIsLoading] = useState("");
+  const [isLoading, setIsLoading] = useState("Currently Disabled");
   const [isSpinning, setIsSpinning] = useState(false);
   const [btnDisabled, setBtnDisabled] = useState(true);
 
@@ -77,7 +77,8 @@ function App() {
                   onChange={handleQuestionChange}
                   placeholder="Type your question here"
                 />
-                <button id='submitBtn' type="submit" className="btn btn-primary" disabled ={btnDisabled}> Ask a Question </button>
+                {/* <button id='submitBtn' type="submit" className="btn btn-primary" disabled ={btnDisabled}> Ask a Question </button> */}
+                <button id='submitBtn' type="submit" className="btn btn-primary" disabled ={true}> Ask a Question </button>
               </form>
               {isSpinning ? (
                 <div className=" ">
