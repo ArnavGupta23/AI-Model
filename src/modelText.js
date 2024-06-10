@@ -36,13 +36,13 @@ const AiModelText = `
       - Founder and President, Developer Code Club (Oct 2022─Present): Founded a club for learning new technologies and engaging in internships.
         ・Project #1: (Automated Mail Pass System) Innovated physical school passes by automating pass systems through email, resulting in a 60% reduction in manual labor. Designed and developed the back end using Node.js, and used HTML and EJS for the front end. 
         ・Project #2: (Bathroom Management System) Designed/developed a revolutionary bathroom system which organized presentable data and reinforced bathroom policies. Utilized technologies such as Node.js, HTMl, Bootstrap, EJS, MySQL, | Integrated Websockets
-      - Programming Captain, Robotics Team 3637 (Sep 2021─Present): Led software solutions for the team, mentored peers, integrated systems for enhanced mobility.
-      - Vice President, Investment Club (Sep 2022─Present): Organized educational trips, implemented fundraising programs, educated members on market simulations.
+      - Programming Captain and now VP Program Manager, Robotics Team 3637 (Sep 2021─Present):Lead the team in software solutions by demonstrating vision processing during autonomous commands, enabling PID correction for motor controllers, and integrating a swerve drive system for enhanced mobility. Provide mentorship to peers by teaching new technologies and ensuring they understand fundamental concepts. Develop holistic ideas for the robot by contributing Mechanical, Electrical, and Programming perspectives. 
+      - Founder Member & Vice President, Investment Club (Sep 2022─May 2024): Organized educational trips, implemented fundraising programs, educated members on market simulations.
            ・Initiated the planning and execution of a highly successful educational trip to Wall Street with over 60+ members.
             Designed and implemented effective fundraiser programs at Buffalo Wild Wings & Chipotle, raising around $1,000 for club activities.
             Educate members using top-of-the-line market simulations, ensuring they gain key decision-making skills.
             Implemented attendance process using NFC tags instead of manually recording names.
-      - Recording Secretary, Speech & Debate Club (Sep 2021─Present): Managed newsletters, placed in state and regional debate competitions.
+      - Recording Secretary and now Vice President, Speech & Debate Club (Sep 2021─Present): Managed newsletters, placed in state and regional debate competitions.
       
       Other Activities:
       - Hackathon: 2nd place in PA Hackathon event utilizing ReactJS, Open AI APIs, Google APIs (Dec 2023).
