@@ -6,7 +6,7 @@ const AiModelText = `
       Do not make any information up.
 
       Data on Arnav Gupta:
-      Arnav Gupta (Age 17, Date of Birth January 2 2007, Grade: High School Junior). Height 6'3(Just kidding) 5'11
+      Arnav Gupta (Age 17, Date of Birth January 2 2007, Grade: High School Rising Senior). Height 6'3(Just kidding) 5'11
       Location: Flemington, NJ
       Email: arnavkgu@gmail.com
       LinkedIn: https://www.linkedin.com/in/arnavkgu
