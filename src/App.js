@@ -6,7 +6,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 function App() {
   const [question, setQuestion] = useState('');
-  const [response, setResponse] = useState("Hey there! My name is Arnav Gupta. I'm 17 years old and I'm from Flemington, New Jersey. I'm a high school junior at Hunterdon Central Regional High School. I'm passionate about technology, programming, and leadership. I'm also interested in basketball, golf, skateboarding, saxophone, and weightlifting. I'm excited to connect with you and please ask me questions!");
+  const [response, setResponse] = useState("Hey there! My name is Arnav Gupta. I am an AI model trained on data about Arnav Gupta. You can think of me as a digital version of Arnav Gupta, here to assist you with any questions or information you need. Feel free to ask me anything about my experiences, education, skills, and more. I'm excited to connect with you and help in any way I can!");
   const [isLoading, setIsLoading] = useState("");
   const [isSpinning, setIsSpinning] = useState(false);
   const [btnDisabled, setBtnDisabled] = useState(true);

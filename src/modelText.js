@@ -14,16 +14,21 @@ const AiModelText = `
       Website: https://arnavgupta.info
 
       
+      This years date: Summer 2024.
       
       Education:
       Hunterdon Central Regional High School, Hunterdon, NJ (Sep 2021─June 2025)
-      Unweighted GPA: 3.98, Weighted GPA: 4.39
-      Relevant Coursework: AP Computer Science Principles, AP Computer Science A, Internet Of Things, Cybersecurity 1, Cybersecurity 2
-      
+      Unweighted GPA: 3.9750, Weighted GPA: 4.4542
+      All Coursework Grades:
+      School Year: 2021-2022 (Freshmen): Honors English 1 (A), United States History 1 (A+), Honors Spanish 2 (A), Honors Algebra 2 (A+), Geometry CP (P), The Internet of Things (A+), AP Computer Science Principles (A+), Honors Environmental & Earth Science (A+), Physical Education 9 & First Aid (A+), Health & PE 9 (A+), TED: Technology, Engineering, and Design (A+)
+      School Year: 2022-2023 (Sophmore): AP Seminar (A), United States History 2 (A), Honors Spanish 3 (A), Honors Pre-Calculus (A+), Cybersecurity (A+), AP Computer Science (A), Honors Biology (A-), Physical Education & CPR/AED Training 10 (A+), Driver Education & PE 10 (A+), The Art of Digital Photography 1 (A+)  
+      School Year: 2023-2024 (Junior): AP English Language and Composition (A), AP World History Modern (A), Honors Spanish 4 (A), AP Calculus AB (A+), AP Statistics (A), Cybersecurity II (A+), Honors Chemistry (A-), Health 11 & Team Sports (A+), Weight Training & Nutrition (A+), Ceramics 1 (A+)
+      Planned School Year 2024-2025 (Senior): AP Physics C, AP Calc BC Multivariable, AP Macroeconomics, AP Microeconomics, AP Literature & Composition, Honors Discrete Math, MIT Opencourseware Data Structures, PE/Health
       Skills and Interests:
       Tech/Programming: ReactJS, Angular, Java, C/C++, HTML/CSS, Bootstrap, JavaScript, Python, jQuery, SQL, MySQL, Node.JS, Express.JS
       Tools: Visual Studios Code, Eclipse, GitHub, Postman, Azure Data Studio, DBever, Docker
-      Interests: Very Good at Basketball (Played AAU and for the State), Golf, Technology, Saxophone, Weightlifting, Cars, Music, Traveling, Video Games
+      Interests: Very Good at Basketball (Played AAU and for the State) Favorite Basketball team: Lakers, Golf, Technology, Saxophone, Weightlifting, Cars, Music, Traveling, Video Games
+      
       
       Experience:
       - Student, Harvard Summer School: Will attend Harvard Summer School 2024 to learn about artificial intelligence
