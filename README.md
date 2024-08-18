@@ -10,3 +10,6 @@ This project is a React-based web application that allows users to interact with
 - **Google Generative AI Integration:** The application leverages the Google Generative AI (Gemini API) to process and generate responses.
 - **Loading Indicator:** A spinner is displayed while the AI processes the input, providing feedback to the user.
 - **Responsive Design:** The app is built with a responsive design, ensuring it works well on different screen sizes.
+
+## Project Live
+- [ai.arnavgupta.info](https://ai.arnavgupta.info)
