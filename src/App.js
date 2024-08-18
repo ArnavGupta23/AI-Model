@@ -1,5 +1,6 @@
 import modelText from './modelText'; 
 import React, { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 import './App.css';
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
@@ -87,7 +88,9 @@ function App() {
                 </div>
                ) : null}
               <div className="chat-responses p-3 rounded" style={{ height: "300px", overflowY: "auto", background: "#f8f9fa" }}>
-                <p className='text-center'>{response}</p>
+                <p className='text-center'>
+                  <ReactMarkdown>{response}</ReactMarkdown>
+                </p>
               </div>
               <small className="text-muted">{isLoading}</small>
             </div>
